@@ -25,7 +25,7 @@ BOOTSTRAP_TEMPLATE_SWITCH = {DateField: "bootstrap_tags/date_field.html",
                         ChoiceField: "bootstrap_tags/list_field.html",
                         BooleanField: "bootstrap_tags/boolean_field.html"}
 
-if settings.hasattr("BOOTSTRAP_TEMPLATE_SWITCH"):
+if hasattr(settings, "BOOTSTRAP_TEMPLATE_SWITCH"):
     BOOTSTRAP_TEMPLATE_SWITCH.update(settings.BOOTSTRAP_TEMPLATE_SWITCH)
 
 
