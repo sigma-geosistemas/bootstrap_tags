@@ -1,0 +1,42 @@
+{% load widget_tweaks %}
+<div class="form-group">
+    <label class="col-sm-2 control-label" for="id_{{ field.name }}">
+
+        {% if field.field.required or required %}
+            <strong>
+
+        {% endif %}
+
+        {% if field.help_text %}
+            <a href="#" class="disabled" data-toggle="tooltip" title="{{ field.help_text }}">
+        {% endif %}
+
+        {{ field.label }}
+
+        {% if field.help_text %}
+            </a>
+        {% endif %}
+
+        {% if field.field.required or required %}
+            <span>*</span>
+            </strong>
+        {% endif %}
+
+    </label>
+    <div class="col-sm-5">
+        <div class="input-group">
+            {{ field|attr:"class:form-control" }}
+            <span class="input-group-addon">0</span>
+
+        </div>
+        
+        {% if field.errors %}
+            <p>
+                <span style="color: #ff0000">
+                    {{ field.errors|join:", " }}
+                </span>
+            </p>
+        {% endif %}
+        
+    </div>
+</div>
