@@ -10,8 +10,8 @@ from django.forms import (TimeField,
                           ChoiceField,
                           FloatField,
                           BooleanField,
-                          BaseForm,
-                          forms.BoundField)
+                          BaseForm)
+from django.forms.forms import BoundField
 
 register = template.Library()
 
@@ -37,7 +37,7 @@ def boots_form(obj):
     if isinstance(obj, BaseForm):
         return form(obj)
 
-    elif isinstance(obj, forms.BoundField):
+    elif isinstance(obj, BoundField):
         return boots_field(obj)
 
     else:
