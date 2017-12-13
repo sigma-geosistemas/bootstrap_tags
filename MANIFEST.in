@@ -1,1 +1,3 @@
-include templates/bootstrap_tags *
+include README.md
+recursive-include bootstrap_tags *.html *.png *.gif *js *.css *jpg *jpeg *svg *py
+
